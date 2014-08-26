@@ -5,8 +5,8 @@ python: "2.7"
 before_install:
   - sudo apt-get update -qq
 
-  # Remove htop
-  - sudo apt-get remove --purge htop
+  # Remove nano
+  - sudo apt-get remove --purge nano
 
 install:
   # Install Ansible.
