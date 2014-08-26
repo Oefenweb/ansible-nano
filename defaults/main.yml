@@ -1,0 +1,11 @@
+---
+# defaults file for nano
+nano_nanorc_destinations:
+  # new users
+  - /etc/skel
+  # current user
+  - "{{ ansible_env.HOME }}"
+
+nano_tabsize: 2
+
+nano_tabstospaces: true
