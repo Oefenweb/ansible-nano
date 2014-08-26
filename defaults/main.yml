@@ -7,5 +7,5 @@ nano_nanorc_destinations:
   - "{{ ansible_env.HOME }}"
 
 nano_tabsize: 2
-
 nano_tabstospaces: true
+nano_smooth_scrolling: true

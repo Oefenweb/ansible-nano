@@ -9,8 +9,9 @@ None
 #### Variables
 
 * `nano_nanorc_destinations`: [default: `[/etc/skel, {{ ansible_env.HOME }}]`]: Destinations to copy the nanorc file to
-* `nano_tabsize`: [default: `2`]: Use this tab size instead of the default
-* `nano_tabstospaces`: [default: `true`]: Convert typed tabs to spaces
+* `nano_tabsize`: [default: `2`]: Tab size
+* `nano_tabstospaces`: [default: `true`]: Whether or not to convert typed tabs to spaces
+* `nano_smooth_scrolling`: [default: `true`]: Whether or not to use smooth scrolling
 
 ## Dependencies
 
