@@ -1,0 +1,17 @@
+---
+- name: Clone Nanorc from GitHub.
+  git: >
+    repo={{ nano_nanorc_git_repo }}
+    dest={{ nano_nanorc_install_dir }}
+    version={{ nano_nanorc_git_branch }}
+    update=true
+  when: (nano_install_nanorc == true)
+
+- name: Ensure make is installed.
+  apt:
+    name: make
+    state: installed
+
+- name: Build Nanorc.
+  shell: 'cd {{ nano_nanorc_install_dir }};make install'
+  when: (nano_install_nanorc == true)
