@@ -9,3 +9,11 @@ nano_nanorc_destinations:
 nano_tabsize: 2
 nano_tabstospaces: true
 nano_smooth_scrolling: true
+
+nano_install_nanorc: true
+nano_nanorc_git_repo: https://github.com/nanorc/nanorc
+nano_nanorc_git_branch: master
+nano_nanorc_install_dir: "{{ ansible_env.HOME }}/.nano"
+
+# Possible values: "all" or list of languages.
+nano_nanorc_langs: all

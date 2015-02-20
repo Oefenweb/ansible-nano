@@ -249,6 +249,17 @@ set tabstospaces
 ## Nanorc files
 include "/usr/share/nano/nanorc.nanorc"
 
+{% if nano_install_nanorc %}
+  {% if nano_nanorc_langs == 'all' %}
+include "{{ nano_nanorc_install_dir }}/syntax/ALL.nanorc"
+  {% else %}
+    {% for lang in nano_nanorc_langs %}
+## {{ lang|capitalize }}
+include "{{ nano_nanorc_install_dir }}/syntax/{{ lang }}.nanorc"
+    {% endfor %}
+  {% endif %}
+{% else %}
+
 ## C/C++
 include "/usr/share/nano/c.nanorc"
 
@@ -311,3 +322,4 @@ include "/usr/share/nano/pov.nanorc"
 
 ## XML-type files
 include "/usr/share/nano/xml.nanorc"
+{% endif %}

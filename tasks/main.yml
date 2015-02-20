@@ -6,6 +6,9 @@
     state: latest
   tags: [configuration, nano, nano-install]
 
+- include: install-nanorc.yml
+  when: nano_install_nanorc == true
+
 - name: create configuration file
   template:
     src: etc/nanorc.j2
