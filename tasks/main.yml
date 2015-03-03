@@ -6,8 +6,9 @@
     state: latest
   tags: [configuration, nano, nano-install]
 
-- include: install-nanorc.yml
-  when: nano_install_nanorc == true
+- include: install-improved-nanorc.yml
+  when: nano_improved_nanorc_install
+  tags: [configuration, nano, improved-nanorc]
 
 - name: create configuration file
   template:
