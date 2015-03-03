@@ -245,20 +245,19 @@ set tabstospaces
 ## Set this if your backspace key sends delete most of the time (2.1.3+)
 # bind kdel backspace all
 
-
-## Nanorc files
-include "/usr/share/nano/nanorc.nanorc"
-
 {% if nano_improved_nanorc_install %}
   {% if nano_improved_nanorc_langs == 'all' %}
-include "/usr/local/share/nano/syntax/ALL.nanorc"
+include "/usr/local/share/nano/ALL.nanorc"
   {% else %}
-    {% for lang in nano_nanorc_langs %}
+    {% for lang in nano_improved_nanorc_langs %}
 ## {{ lang | capitalize }}
-include "/usr/local/share/nano/syntax/{{ lang }}.nanorc"
+include "/usr/local/share/nano/{{ lang }}.nanorc"
     {% endfor %}
   {% endif %}
 {% else %}
+
+## Nanorc files
+include "/usr/share/nano/nanorc.nanorc"
 
 ## C/C++
 include "/usr/share/nano/c.nanorc"
