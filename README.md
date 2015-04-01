@@ -6,7 +6,7 @@ Set up nano in Debian-like systems.
 
 #### Requirements
 
-* `git` (will be installed)
+* `git-core` (will be installed)
 * `make` (will be installed)
 
 #### Variables
@@ -17,7 +17,6 @@ Set up nano in Debian-like systems.
 * `nano_smooth_scrolling`: [default: `true`]: Whether or not to use smooth scrolling
 
 * `nano_improved_nanorc_install`: [default: `true`]: Whether or not to install [improved syntax highlighting](https://github.com/nanorc/nanorc)
-* `nano_improved_nanorc_dependencies`: [default: `[git, make]`]: Dependencies to build the syntax definitions
 * `nano_improved_nanorc_langs`: [default: `all`]: Languages to enable after installation
 * `nano_improved_nanorc_git_repo`: [default: `https://github.com/nanorc/nanorc`]: The repository url
 * `nano_improved_nanorc_git_branch`: [default: `master`]: The branch to checkout
