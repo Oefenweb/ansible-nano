@@ -15,9 +15,9 @@
 - name: create configuration file
   template:
     src: etc/nanorc.j2
-    dest: "{{ item }}/.nanorc"
-    owner: root
-    group: root
-    mode: 0644
-  with_items: nano_nanorc_destinations
+    dest: "{{ item.value.dest }}/.nanorc"
+    owner: "{{ item.value.owner | default('root') }}"
+    group: "{{ item.value.group | default('root') }}"
+    mode: "{{ item.value.mode | default('0644') }}"
+  with_dict: nano_nanorc_destinations
   tags: [configuration, nano, nano-configuration]

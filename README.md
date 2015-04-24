@@ -11,7 +11,13 @@ Set up nano in Debian-like systems.
 
 #### Variables
 
-* `nano_nanorc_destinations`: [default: `[/etc/skel, {{ ansible_env.HOME }}]`]: Destinations to copy the nanorc file to
+* `bash_bashrc_destinations` [default: `{skell: dest: /etc/skel, current: dest: "{{ ansible_env.HOME }}"}`]: Destinations to copy the nanorc file to
+* `bash_bashrc_destinations.key`: The identifier of the file (e.g. `skel`)
+* `bash_bashrc_destinations.key.dest`: The remote path of the file to copy (e.g. `/etc/skel`)
+* `bash_bashrc_destinations.key.owner`: The name of the user that should own the file (optional, default `root`)
+* `bash_bashrc_destinations.key.group`: The name of the group that should own the file (optional, default `root`)
+* `bash_bashrc_destinations.key.mode`: The mode of the file, such as 0644 (optional, default `0644`)
+
 * `nano_tabsize`: [default: `2`]: Tab size
 * `nano_tabstospaces`: [default: `true`]: Whether or not to convert typed tabs to spaces
 * `nano_smooth_scrolling`: [default: `true`]: Whether or not to use smooth scrolling
