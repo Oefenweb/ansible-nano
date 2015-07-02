@@ -17,7 +17,7 @@
     src: etc/nanorc.j2
     dest: "{{ item.value.dest }}/.nanorc"
     owner: "{{ item.value.owner | default('root') }}"
-    group: "{{ item.value.group | default('root') }}"
+    group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
     mode: "{{ item.value.mode | default('0644') }}"
   with_dict: nano_nanorc_destinations
   tags: [configuration, nano, nano-configuration]
