@@ -29,5 +29,5 @@
   shell: "make install-global && make clean"
   args:
     chdir: "/var/lib/ansible/nano/checkouts/nanorc"
-  when: result|changed
+  when: result | changed
   tags: [configuration, nano, improved-nanorc-install]
