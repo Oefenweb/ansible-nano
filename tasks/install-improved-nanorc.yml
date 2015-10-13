@@ -1,5 +1,5 @@
----
 # tasks file for nano, improved nanorc
+---
 - name: improved nanorc | install dependencies
   apt:
     name: "{{ item }}"

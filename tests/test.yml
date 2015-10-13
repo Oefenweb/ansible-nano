@@ -1,6 +1,6 @@
----
 # test file for nano
+---
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-nano
+    - ../../

@@ -1,5 +1,5 @@
----
 # tasks file for nano
+---
 - name: install
   apt:
     name: nano

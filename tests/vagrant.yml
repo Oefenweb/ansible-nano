@@ -1,10 +1,10 @@
----
 # test file for nano
+---
 - hosts: all
   remote_user: vagrant
   sudo: true
   roles:
-    - nano
+    - ../../
   vars:
     nano_nanorc_destinations:
       skell:
