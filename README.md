@@ -1,6 +1,6 @@
 ## nano
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-nano.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-nano) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-nano-blue.svg)](https://galaxy.ansible.com/list#/roles/1499)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-nano.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-nano) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-nano-blue.svg)](https://galaxy.ansible.com/tersmitten/nano)
 
 Set up nano in Debian-like systems.
 
@@ -37,7 +37,7 @@ None
 ---
 - hosts: all
   roles:
-  - nano
+    - nano
 ```
 
 #### License

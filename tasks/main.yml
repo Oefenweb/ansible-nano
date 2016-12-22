@@ -2,15 +2,22 @@
 ---
 - name: install
   apt:
-    name: nano
-    state: latest
+    name: "{{ item }}"
+    state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  tags: [configuration, nano, nano-install]
+  with_items: "{{ nano_dependencies }}"
+  tags:
+    - configuration
+    - nano
+    - nano-install
 
 - include: install-improved-nanorc.yml
   when: nano_improved_nanorc_install
-  tags: [configuration, nano, improved-nanorc]
+  tags:
+    - configuration
+    - nano
+    - nano-improved-nanorc
 
 - name: create configuration file
   template:
@@ -19,5 +26,8 @@
     owner: "{{ item.value.owner | default('root') }}"
     group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
     mode: "{{ item.value.mode | default('0644') }}"
-  with_dict: nano_nanorc_destinations
-  tags: [configuration, nano, nano-configuration]
+  with_dict: "{{ nano_nanorc_destinations }}"
+  tags:
+    - configuration
+    - nano
+    - nano-configuration
