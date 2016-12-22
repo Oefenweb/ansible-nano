@@ -1,5 +1,7 @@
 # vars file for nano
 ---
+nano_dependencies:
+  - nano
 nano_improved_nanorc_dependencies:
   - git-core
   - make
