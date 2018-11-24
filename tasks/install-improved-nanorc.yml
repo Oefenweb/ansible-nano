@@ -2,15 +2,14 @@
 ---
 - name: improved nanorc | install dependencies
   apt:
-    name: "{{ item }}"
+    name: "{{ nano_improved_nanorc_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
-  with_items: "{{ nano_improved_nanorc_dependencies }}"
   tags:
     - nano-improved-nanorc-dependencies
 
 - name: improved nanorc | create (checkout) directory
   file:
-    path: /var/lib/ansible/nano/checkouts
+    path: "{{ nano_checkout_path }}"
     state: directory
     owner: root
     group: root
@@ -21,17 +20,18 @@
 - name: improved nanorc | checkout repository
   git:
     repo: "{{ nano_improved_nanorc_git_repo }}"
-    dest: /var/lib/ansible/nano/checkouts/nanorc
+    dest: "{{ nano_checkout_path }}"
     version: "{{ nano_improved_nanorc_git_branch }}"
     force: true
-  register: result
+  register: _result
   tags:
     - nano-improved-nanorc-checkout
 
 - name: improved nanorc | install syntax definitions
-  shell: "make install-global && make clean"
+  shell: >
+    make install-global && make clean
   args:
-    chdir: "/var/lib/ansible/nano/checkouts/nanorc"
-  when: result is changed
+    chdir: "{{ nano_checkout_path }}"
+  when: _result is changed
   tags:
     - nano-improved-nanorc-install

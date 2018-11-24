@@ -1,6 +1,7 @@
 # meta file for nano
 ---
 galaxy_info:
+  role_name: nano
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up nano in Debian-like systems
