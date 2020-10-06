@@ -6,7 +6,7 @@ Set up nano in Debian-like systems.
 
 #### Requirements
 
-* `git-core` (will be installed)
+* `git` (will be installed)
 * `make` (will be installed)
 
 #### Variables

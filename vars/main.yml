@@ -3,7 +3,7 @@
 nano_dependencies:
   - nano
 nano_improved_nanorc_dependencies:
-  - git-core
+  - git
   - make
 
 nano_checkout_path: /var/lib/ansible/nano/checkouts
