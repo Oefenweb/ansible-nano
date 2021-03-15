@@ -1,4 +1,4 @@
-# vars file for nano
+# vars file
 ---
 nano_dependencies:
   - nano

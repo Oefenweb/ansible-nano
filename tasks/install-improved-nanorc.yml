@@ -1,4 +1,4 @@
-# tasks file for nano, improved nanorc
+# tasks file
 ---
 - name: improved nanorc | install dependencies
   apt:

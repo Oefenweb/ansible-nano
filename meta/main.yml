@@ -1,6 +1,7 @@
-# meta file for nano
+# meta file
 ---
 galaxy_info:
+  namespace: oefenweb
   role_name: nano
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
