@@ -11,8 +11,9 @@
     - nano
     - nano-install
 
-- include: install-improved-nanorc.yml
-  when: nano_improved_nanorc_install
+- name: install improved nanorc
+  ansible.builtin.import_tasks: install-improved-nanorc.yml
+  when: nano_improved_nanorc_install | bool
   tags:
     - configuration
     - nano
