@@ -1,14 +1,14 @@
 # tasks file
 ---
-- name: improved nanorc | install dependencies
-  apt:
+- name: improved nanorc | install dependencies  # noqa args[module]
+  ansible.builtin.apt:
     name: "{{ nano_improved_nanorc_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
   tags:
     - nano-improved-nanorc-dependencies
 
 - name: improved nanorc | create (checkout) directory
-  file:
+  ansible.builtin.file:
     path: "{{ nano_checkout_path }}"
     state: directory
     owner: root
@@ -18,7 +18,7 @@
     - nano-improved-nanorc-checkout
 
 - name: improved nanorc | checkout repository
-  git:
+  ansible.builtin.git:
     repo: "{{ nano_improved_nanorc_git_repo }}"
     dest: "{{ nano_checkout_path }}"
     version: "{{ nano_improved_nanorc_git_branch }}"
@@ -28,7 +28,7 @@
     - nano-improved-nanorc-checkout
 
 - name: improved nanorc | install syntax definitions
-  shell: >
+  ansible.builtin.shell: >
     make install-global && make clean
   args:
     chdir: "{{ nano_checkout_path }}"
