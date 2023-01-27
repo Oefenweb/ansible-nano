@@ -1,7 +1,7 @@
 # tasks file
 ---
-- name: install
-  apt:
+- name: install  # noqa args[module]
+  ansible.builtin.apt:
     name: "{{ nano_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -11,15 +11,16 @@
     - nano
     - nano-install
 
-- include: install-improved-nanorc.yml
-  when: nano_improved_nanorc_install
+- name: install improved nanorc
+  ansible.builtin.import_tasks: install-improved-nanorc.yml
+  when: nano_improved_nanorc_install | bool
   tags:
     - configuration
     - nano
     - nano-improved-nanorc
 
 - name: create configuration file
-  template:
+  ansible.builtin.template:
     src: etc/nanorc.j2
     dest: "{{ item.value.dest }}/.nanorc"
     owner: "{{ item.value.owner | default('root') }}"
