@@ -38,7 +38,7 @@ None
 ---
 - hosts: all
   roles:
-    - nano
+    - oefenweb.nano
 ```
 
 #### License
