@@ -33,5 +33,6 @@
   args:
     chdir: "{{ nano_checkout_path }}"
   when: _result is changed
+  changed_when: true
   tags:
     - nano-improved-nanorc-install
