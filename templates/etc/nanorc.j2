@@ -140,11 +140,13 @@ set nowrap
 ## beginning of the line.
 # set smarthome
 
+{% if nano_version is version('5.6.1', '<') %}
 ## Use smooth scrolling as the default.
 {% if nano_smooth_scrolling %}
 set smooth
 {% else %}
 # set smooth
+{% endif %}
 {% endif %}
 
 ## Use this spelling checker instead of the internal one.  This option
@@ -152,8 +154,10 @@ set smooth
 ##
 # set speller "aspell -x -c"
 
+{% if nano_version is version('6.3', '<') %}
 ## Allow nano to be suspended.
 set suspend
+{% endif %}
 
 ## Use this tab size instead of the default; it must be greater than 0.
 {% if nano_tabsize %}
