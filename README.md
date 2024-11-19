@@ -20,10 +20,10 @@ Set up nano in Debian-like systems.
 * `nano_nanorc_destinations.key.mode`: The mode of the file, such as 0644 (optional, default `0644`)
 
 * `nano_tabsize`: [default: `2`]: Tab size
-* `nano_tabstospaces`: [default: `true`]: Whether or not to convert typed tabs to spaces
-* `nano_smooth_scrolling`: [default: `true`]: Whether or not to use smooth scrolling
+* `nano_tabstospaces`: [default: `true`]: Whether to convert typed tabs to spaces
+* `nano_smooth_scrolling`: [default: `true`]: Whether to use smooth scrolling (version `< 5.6.1`)
 
-* `nano_improved_nanorc_install`: [default: `true`]: Whether or not to install [improved syntax highlighting](https://github.com/nanorc/nanorc)
+* `nano_improved_nanorc_install`: [default: `true`]: Whether to install [improved syntax highlighting](https://github.com/nanorc/nanorc)
 * `nano_improved_nanorc_langs`: [default: `all`]: Languages to enable after installation
 * `nano_improved_nanorc_git_repo`: [default: `https://github.com/nanorc/nanorc`]: The repository url
 * `nano_improved_nanorc_git_branch`: [default: `master`]: The branch to checkout

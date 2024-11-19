@@ -11,6 +11,30 @@
     - nano
     - nano-install
 
+- name: get (current) version  # noqa risky-shell-pipe
+  ansible.builtin.shell: >
+    nano --version 2>&1 | head -1 | awk '{print $NF}'
+  register: _get_current_version
+  changed_when: false
+  check_mode: false
+  failed_when: "_get_current_version.rc != 0"
+  tags:
+    - configuration
+    - nano
+    - nano-version
+    - nano-version-get
+
+- name: set (current) version
+  ansible.builtin.set_fact:
+    nano_version: "{{ _get_current_version.stdout | regex_search('^([0-9]+\\.[0-9]+\\.?[0-9]*)$') }}"
+  changed_when: false
+  check_mode: false
+  tags:
+    - configuration
+    - nano
+    - nano-version
+    - nano-version-set
+
 - name: install improved nanorc
   ansible.builtin.import_tasks: install-improved-nanorc.yml
   when: nano_improved_nanorc_install | bool
