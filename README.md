@@ -12,7 +12,7 @@ Set up nano in Debian-like systems.
 
 #### Variables
 
-* `nano_nanorc_destinations` [default: `{skell: dest: /etc/skel, current: dest: "{{ ansible_env.HOME }}"}`]: Destinations to copy the nanorc file to
+* `nano_nanorc_destinations` [default: `{skell: dest: /etc/skel, current: dest: "{{ ansible_facts['env']['HOME'] }}"}`]: Destinations to copy the nanorc file to
 * `nano_nanorc_destinations.key`: The identifier of the file (e.g. `skel`)
 * `nano_nanorc_destinations.key.dest`: The remote path of the file to copy (e.g. `/etc/skel`)
 * `nano_nanorc_destinations.key.owner`: The name of the user that should own the file (optional, default `root`)
